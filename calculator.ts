@@ -7,7 +7,7 @@ const answer = await inquirer.prompt([
     message: "Select one of the operator to perfrom operation",
     type: "list",
     name: "operator",
-    choices: ["Addition", "Subtraction", "Multiplication", "Division"],
+    choices: ["Addition", "Subtraction", "Multiplication", "Division","Percentage","Exponent","Modulus"],
   },
 ]);
 
@@ -25,7 +25,13 @@ else if (answer.operator === "Multiplication") {
 }
 else if (answer.operator === "Division") {
   console.log(answer.firstNumber / answer.secondNumber);
+}else if (answer.operator === "Percentage") {
+  console.log((answer.firstNumber / answer.secondNumber) * 100,"%");
+}else if (answer.operator === "Exponent") {
+  console.log(answer.firstNumber ** answer.secondNumber);
+}else if (answer.operator === "Modulus") {
+  console.log(answer.firstNumber % answer.secondNumber);
 }
 else {
-  console.log("Please Select Valid Calculator")
+  console.log("Please Select Valid Number")
 }
